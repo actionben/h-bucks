@@ -1,2 +1,39 @@
-<h1>James is the best</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<%
+@chores = [
+  {
+    name: 'Empty Dishwasher',
+    prize: 'HB 547',
+    status: 'Not Ready'
+  },
+  {
+    name: 'Load Dishwasher',
+    prize: 'HB 635',
+    status: 'Taken'
+  },
+  {
+    name: 'Wash Car',
+    prize: 'HB 475',
+    status: 'Ready'
+  }
+]
+
+%>
+<h1>H-Bucks</h1>
+<table>
+<thead>
+<tr>
+  <th>Chores</th>
+  <th>Prize</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+  <% @chores.each do |chore| %>
+    <tr>
+      <td><%= chore[:name] %></td>
+      <td><%= chore[:prize] %></td>
+      <td><%= chore[:status] %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
