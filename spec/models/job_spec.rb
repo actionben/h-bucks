@@ -14,4 +14,10 @@ RSpec.describe Job, type: :model do
       expect(job.value).to eq job.initial_value
     end
   end
+
+  context 'when a job has never been done' do
+    it 'was last done when it was created' do
+      expect(job.last_done_at).to eq job.created_at
+    end
+  end
 end
