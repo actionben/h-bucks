@@ -1,5 +1,10 @@
 require 'rails_helper'
+require 'factory_bot'
 
 RSpec.describe Job, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:job) { create(:job) }
+
+  it 'has a name' do
+    expect(job.name).to_not be_nil
+  end
 end
